@@ -1,0 +1,71 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#abdbe3"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- 노래 이름 -->
+    <TextView
+        android:id="@+id/textViewSong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="노래 이름"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_marginTop="23dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 가수 이름 -->
+    <TextView
+        android:id="@+id/textViewArtist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="가수 이름"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSong"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 앨범 사진 -->
+    <ImageView
+        android:id="@+id/imageViewAlbum"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:src="@drawable/album_peaches"
+    android:scaleType="centerCrop"
+    android:layout_marginTop="60dp"
+    app:layout_constraintTop_toBottomOf="@+id/textViewSong"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 설명 텍스트 -->
+    <TextView
+        android:id="@+id/textViewDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="설명"
+        android:textSize="20dp"
+        android:layout_margin="35dp"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewAlbum"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 메인으로 돌아가기 버튼 -->
+    <Button
+        android:id="@+id/buttonBackToMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="메인으로 돌아가기"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:backgroundTint="#76b5c5"
+        android:layout_marginTop="25dp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDescription"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,229 @@
+<!-- res/layout/activity_main.xml -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity"
+    android:background="#abdbe3">
+
+    <!-- 이미지 추가 -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/lonely_tree"
+        android:scaleType="centerCrop" />
+
+    <!-- 상단 제목 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SoundScape"
+            android:textSize="67dp"
+            android:textColor="#154c79"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="60dp"/>
+    </RelativeLayout>
+
+    <!-- 이름 입력 -->
+    <RelativeLayout
+        android:id="@+id/relativeLayoutName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="220dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp">
+
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이름"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="6dp"
+            android:textStyle="bold"
+            android:textSize="22sp"/>
+
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@+id/textViewName"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="10dp"
+            android:background="@drawable/edit_text_background"
+            android:hint="이름을 입력하세요."
+            android:textSize="20sp"/>
+    </RelativeLayout>
+
+    <!-- 나이 입력 -->
+    <RelativeLayout
+        android:id="@+id/relativeLayoutAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayoutName"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp">
+
+        <TextView
+            android:id="@+id/textViewAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="나이"
+            android:layout_marginTop="6dp"
+            android:layout_alignParentLeft="true"
+            android:textStyle="bold"
+            android:textSize="22sp"/>
+
+        <EditText
+            android:id="@+id/editTextAge"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@+id/textViewAge"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="10dp"
+            android:background="@drawable/edit_text_background"
+            android:hint="나이를 입력하세요."
+            android:inputType="number"
+            android:textSize="20sp"/>
+    </RelativeLayout>
+
+    <!-- 성별 선택 -->
+    <RelativeLayout
+        android:id="@+id/relativeLayoutGender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayoutAge"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp">
+
+        <TextView
+            android:id="@+id/textViewGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="성별"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="6dp"
+            android:textStyle="bold"
+            android:textSize="22sp"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroupGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/textViewGender"
+            android:layout_marginLeft="30dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButtonMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="남성"
+                android:layout_marginRight="30dp"
+                android:textSize="18sp"
+                android:backgroundTint="#76b5c5"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/radioButtonFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="여성"
+                android:textSize="18sp"/>
+        </RadioGroup>
+    </RelativeLayout>
+
+    <!-- 위치 정보 입력 -->
+    <RelativeLayout
+        android:id="@+id/relativeLayoutLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayoutGender"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp">
+
+        <TextView
+            android:id="@+id/textViewLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="위치"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="6dp"
+            android:textStyle="bold"
+            android:textSize="22sp"/>
+
+        <!-- 위치 정보 받아오기 버튼 -->
+        <Button
+            android:id="@+id/buttonGetLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="위치 받아오기"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_toRightOf="@+id/textViewLocation"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#76b5c5"
+            android:onClick="onGetLocationButtonClick"/>
+
+    </RelativeLayout>
+
+    <!-- 위치 정보 표시 -->
+    <RelativeLayout
+        android:id="@+id/relativeLayoutLocationText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayoutLocation"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp">
+
+        <!-- 위치가 표시되는 텍스트 -->
+        <TextView
+            android:id="@+id/locationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text=""
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayoutLocationText"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp">
+
+        <!-- 버튼 -->
+        <Button
+            android:id="@+id/buttonSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="음악 추천받기"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:backgroundTint="#76b5c5" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
